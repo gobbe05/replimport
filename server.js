@@ -34,7 +34,7 @@ app.post("/send", (req, res) => {
     text: `${req.body.mailerState.message}`,
   };
 
-  mailData.html = `<b>Hey there</b>`+ mailData.to + `<br>` + mailData.text + `<br/>`
+  mailData.html = `<b>Hey there </b>`+ mailData.to + `<br>` + mailData.text + `<br/>`
 
   console.log(mailData)
 
@@ -47,6 +47,9 @@ app.post("/send", (req, res) => {
       }
       else {
         console.log('==MESAGE SENT==')
+        console.log(mailData.from)
+        console.log(mailData.text)
+        console.log(mailData.html)
         res.json({
           status: "success",
         });
