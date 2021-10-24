@@ -16,7 +16,7 @@ export default function Aboutme () {
 
                 <div className={"item"}>
                     <img src={css}></img>
-                    <h1>C++</h1>
+                    <h1>CSS</h1>
                 </div>
 
                 <div className={"item"}>

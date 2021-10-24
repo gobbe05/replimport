@@ -82,7 +82,7 @@ export default function Contact() {
             value={mailerState.message}
             id="message-input"></textarea>
 
-            <button onClick={submitEmail}>Hej</button>
+            <button onClick={submitEmail}>Submit</button>
         </form>
     </div>
 

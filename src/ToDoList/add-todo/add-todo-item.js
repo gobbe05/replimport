@@ -10,7 +10,10 @@ export default function AddTodoItem(props) {
             <>
                 <div className={"add-todo-container"}>                          
                     <input onChange={(e) => setItemName(e.target.value)}></input>  
-                    <button onClick={() => props.setUlItems(prev => prev.concat(itemName))}>Add Item</button>
+                    <button onClick={() => {
+                        props.setUlItems(prev => prev.concat(itemName))
+                        props.setAddItem(false)
+                        }}>Add Item</button>
                     <h2 onClick={() => props.setAddItem(false)}>x</h2>                
                 </div>
                 <div className={"opacity-fix"}>

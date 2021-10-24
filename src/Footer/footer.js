@@ -10,13 +10,13 @@ export default function Footer() {
                 <img src={logo}></img>
             </div>
             <ul>
-                <li><a href="./home">Home</a></li>
+                <li><a href="./">Home</a></li>
                 <li><a href="./contact">Contact</a></li>
                 <li><a href="./portfolio">todo</a></li>
             </ul>
 
             <div className={"copyright-text"}>
-                <p>Gabriel Raskov ©2021. Kattegatsgymnasiet</p>
+                <p>Gabriel Raskov ©2021. Kattegattsgymnasiet</p>
             </div>
 
         </div>
