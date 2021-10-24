@@ -26,12 +26,23 @@
 }
 
 .add-todo-container input{
-    margin-left: 15px;
-    margin-top: 15px;
+    position: relative;
+
+    top: 35%;
+    
+    height: 10%;
+    width: 80%;
+    margin-left: 10%;
 }
 
 .add-todo-container button {
-    border-style: none;
+    position: relative;
+
+    top: 35%;
+    
+    height: 10%;
+    width: 80%;
+    margin-left: 10%;
 }
 
 .add-todo-container h2 {
