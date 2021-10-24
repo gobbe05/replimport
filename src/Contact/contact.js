@@ -3,26 +3,56 @@ import Header from '../Header/header'
 import Footer from '../Footer/footer'
 import '../CSS/contact.css'
 
-class FormState {
-    constructor(name, email, message, error, mailSent) {
-        this.name = name
-        this.email = email
-        this.message = message
-        this.error = error
-        this.mailSent = mailSent
-    }
-}
 
 export default function Contact() {
 
-    const [data, setData] = React.useState(null)
+    React.useState(() => {
+        console.log(mailerState)
+    }, [mailerState])
 
-    React.useEffect(() => {
-        fetch("/api")
-        .then((res) => res.json())
-        .then((data) => setData(data.message))
-    }, [])
+    const [mailerState, setMailerState] = React.useState({
+        name: "",
+        email: "",
+        message: "",
+      });
 
+
+
+      const submitEmail = async (e) => {
+        e.preventDefault();
+        console.log({ mailerState });
+        const response = await fetch("http://localhost:3001/send", {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify({ mailerState }),
+        })
+          .then((res) => res.json())
+          .then(async (res) => {
+            const resData = await res;
+            console.log(resData);
+            if (resData.status === "success") {
+              alert("Message Sent");
+            } else if (resData.status === "fail") {
+              alert("Message failed to send");
+            }
+          })
+          .then(() => {
+            setMailerState({
+              email: "",
+              name: "",
+              message: "",
+            });
+          });
+      };
+
+      function handleStateChange(e) {
+        setMailerState((prevState) => ({
+          ...prevState,
+          [e.target.name]: e.target.value,
+        }));
+      }
 
     return (
     <>
@@ -31,12 +61,28 @@ export default function Contact() {
     <div className={"contact-form"}>
         <form>
             <legend>E-Mail</legend>
-            <input></input>
+            <input 
+            placeholder="Email"
+            onChange={handleStateChange}
+            name="email"
+            value={mailerState.email}></input>
+
             <legend>Name</legend>
-            <input></input>
+            <input 
+            placeholder="Name"
+            onChange={handleStateChange}
+            name="name"
+            value={mailerState.name}></input>
+
             <legend>Message</legend>
-            <textarea id="message-input"></textarea>
-            <p>{!data ? "Loading..." : data}</p>
+            <textarea 
+            placeholder="Message"
+            onChange={handleStateChange}
+            name="message"
+            value={mailerState.message}
+            id="message-input"></textarea>
+
+            <button onClick={submitEmail}>Hej</button>
         </form>
     </div>
 
