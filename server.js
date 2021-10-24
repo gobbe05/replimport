@@ -30,11 +30,12 @@ app.post("/send", (req, res) => {
   let mailData = {
     from: `${req.body.mailerState.email}`,
     to: "gabbe05gr@gmail.com",
+    name: `${req.body.mailerState.name}`,
     subject: `Message from: ${req.body.mailerState.email}`,
     text: `${req.body.mailerState.message}`,
   };
 
-  mailData.html = `<b>Hey there </b>`+ mailData.to + `<br>` + mailData.text + `<br/>`
+  mailData.html = `<b>Message Recieved </b>`+ `<br>` + mailData.from + `<br>` + `<br>`+ mailData.name + `<br>` + mailData.text + `<br/>`
 
   console.log(mailData)
 
