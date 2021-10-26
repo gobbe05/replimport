@@ -7,6 +7,8 @@ If not RETURN the initial value
 */
 
 function GetUsers(key, initialValue) {
+    //This function should work the exact same but instead using a database
+
     const savedValue = JSON.parse(localStorage.getItem(key)) 
 
     if(savedValue) return savedValue

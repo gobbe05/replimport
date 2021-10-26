@@ -3,6 +3,8 @@ const path = require('path');
 var nodemailer = require('nodemailer')
 const cors = require("cors");
 const { text } = require('express');
+const { MongoClient } = require("mongodb");
+
 const route = express.Router();
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -10,6 +12,11 @@ app.use(express.static(path.resolve(__dirname, './build')));
 
 app.use(express.json());
 app.use(cors())
+
+const connectionString = "mongodb+srv://dbgobbe:gbb05bbe@cluster0.fo1f1.mongodb.net/project-database?retryWrites=true&w=majority"
+MongoClient.connect(connectionString, (err, client) => {
+  console.log(client)
+});
 
 // create reusable transporter object using the default SMTP transport
 const transporter = nodemailer.createTransport({
@@ -21,10 +28,6 @@ const transporter = nodemailer.createTransport({
        },
   secure: true,
   });
-
-app.get("/api", (req, res) => {
-    res.json({ message: "Hello from server!" });
-})
 
 app.post("/send", (req, res) => {
   let mailData = {
