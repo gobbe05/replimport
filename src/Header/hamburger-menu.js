@@ -21,7 +21,7 @@ export default function HamburgerMenu(props) {
             }}>X</h1>
 
             <ul>
-                <li><a href="./home">Home</a></li>
+                <li><a href="./">Home</a></li>
                 <li><a href="./portfolio">Portfolio</a></li>
                 <li><a href="./login">Login</a></li>
             </ul>

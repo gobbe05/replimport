@@ -12,7 +12,7 @@ export default function Footer() {
             <ul>
                 <li><a href="./">Home</a></li>
                 <li><a href="./contact">Contact</a></li>
-                <li><a href="./portfolio">todo</a></li>
+                <li><a href="./portfolio">Todo</a></li>
             </ul>
 
             <div className={"copyright-text"}>

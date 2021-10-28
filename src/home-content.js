@@ -1,7 +1,6 @@
 import React from 'react'
 import './CSS/content.css'
 import {Link} from 'react-scroll'
-import useSwipes from './Custom Hooks/useSwipes'
 
 function Content() {
 

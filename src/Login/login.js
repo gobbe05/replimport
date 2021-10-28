@@ -5,7 +5,6 @@ import Header from "../Header/header";
 export default function LoginPage() {
     return (
         <>
-        <Header />
         <Login />
         </>
     )

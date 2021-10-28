@@ -6,7 +6,7 @@ import Aboutme from './about-me'
 import Login from './Forms/login'
 import Todolist from './ToDoList/list/todo-list'
 import Footer from './Footer/footer'
-
+import Contact from './Contact/contact'
 import useLoggedIn from './Custom Hooks/useLoggedIn'
 import useActiveUser from './Custom Hooks/useActiveUser'
 
@@ -25,15 +25,14 @@ function Home() {
 
 return (
         <>
-        <Header />
         <div id="page-content">
             <div className="start-content">
             <Content />
             </div>
             <div className={"about-me-content"}>
             <Aboutme />
+            <Contact />
             </div>
-            <Footer />
         </div>
         </>
     )

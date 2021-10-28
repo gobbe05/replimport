@@ -6,7 +6,6 @@ import Footer from '../Footer/footer'
 export default function Portfolio () {
     return (
         <>
-        <Header />
         <Todolist />
         <Footer />
         </>

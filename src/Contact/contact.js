@@ -56,8 +56,6 @@ export default function Contact() {
 
     return (
     <>
-    <Header />
-
     <div className={"contact-form"}>
         <form>
             <legend>E-Mail</legend>

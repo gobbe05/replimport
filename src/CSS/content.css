@@ -295,6 +295,20 @@
     }
 
     .story-text {
+        flex-direction: column;
         top: 0 !important;
     }
+    .story-text p {
+      width: 100%;
+    }
+}
+
+@media screen and (max-height: 729px) {
+  .story-text {
+    flex-direction: column;
+  }
+  
+  .story-text p {
+    font-size: 18px;
+  }
 }
